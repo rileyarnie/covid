@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <AppBar>
+        <AppBar position='static'>
           <Toolbar>
             <Typography variant="h6">COVID-19 UPDATES</Typography>
           </Toolbar>
