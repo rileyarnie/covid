@@ -9,18 +9,20 @@ import Cards from "../containers/cards/Cards";
 class App extends Component {
   componentDidMount() {
     this.props.getData();
+    this.props.getCountries();
     this.props.getDailyData();
-
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        {this.props.data && this.props.dailyData ? (
+        {this.props.data &&
+        this.props.dailyData &&
+        this.props.countries.length !== 0 ? (
           <>
             <Cards globalData={this.props.data} />
-            <Picker />
+            <Picker countries={this.props.countries} />
             <Graph dailyData={this.props.dailyData} />
           </>
         ) : (
@@ -34,14 +36,16 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     data: state.data,
-    dailyData: state.dailyData
+    dailyData: state.dailyData,
+    countries: state.countries,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getData: () => dispatch(actionTypes.gettingData()),
-    getDailyData: ()=>dispatch(actionTypes.gettingDailyData())
+    getDailyData: () => dispatch(actionTypes.gettingDailyData()),
+    getCountries: () => dispatch(actionTypes.gettingCountries()),
   };
 };
 
