@@ -3,9 +3,8 @@ import axios from "axios";
 
 const BASE_URL = "https://covid19.mathdro.id/api/";
 
-export const gettingData =()=> (dispatch) => {
-
-    let url = BASE_URL
+export const gettingData = () => (dispatch) => {
+  let url = BASE_URL;
 
   axios
     .get(url)
@@ -22,18 +21,36 @@ export const getData = (data) => {
   };
 };
 
-export const gettingDailyData = () =>dispatch=>{
+export const gettingDailyData = () => (dispatch) => {
+  axios
+    .get(`${BASE_URL}daily/`)
+    .then((res) => {
+      dispatch(getDailyData(res.data));
+    })
+    .catch((err) => console.log(err));
+};
 
-    axios.get(`${BASE_URL}daily/`).then(res=>{
-        dispatch(getDailyData(res.data))
-    }).catch(err=>console.log(err))
+export const getDailyData = (data) => {
+  return {
+    type: actionTypes.GET_DAILY_DATA,
+    payload: data,
+  };
+};
 
-}
+export const gettingCountries = () => (dispatch) => {
+  axios
+    .get(`${BASE_URL}countries/`)
+    .then((res) => {
+      dispatch(getCountries(res.data));
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
-export const getDailyData=(data)=>{
+export const getCountries=(data)=>{
     return{
-        type: actionTypes.GET_DAILY_DATA,
-        payload: data
+        type: actionTypes.GET_COUNRTIES,
+        payload:data.countries
     }
 }
-
