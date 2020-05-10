@@ -7,7 +7,7 @@ import cx from "classnames";
 class Cards extends Component {
   render() {
     return (
-      <div>
+      <div className={styles.container}>
         <Grid
           container
           direction="row"
