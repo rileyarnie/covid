@@ -1,0 +1,9 @@
+.formControl {
+  text-align-last: center;
+  min-width: 20px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  /* margin: 1,
+    width 120,
+    marginTop: theme.spacing(2), */
+}
