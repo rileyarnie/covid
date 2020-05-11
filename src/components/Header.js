@@ -4,7 +4,7 @@ import { AppBar, Toolbar, Typography } from "@material-ui/core";
 class Header extends Component {
   render() {
     return (
-      <div className="mt-3">
+      <div>
         <AppBar position='static'>
           <Toolbar>
             <Typography variant="h6">COVID-19 UPDATES</Typography>
