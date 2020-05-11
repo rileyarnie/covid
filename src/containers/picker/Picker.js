@@ -3,10 +3,10 @@ import classes from "./Picker.module.css";
 
 export class Picker extends Component {
   handleChange = (event) => {
-    console.log(event.target.value);
+    this.props.handleCountry(event.target.value);
   };
-  render() {
 
+  render() {
     return (
       <div className={classes.formControl}>
         <label htmlFor="cars">Select Country: </label>

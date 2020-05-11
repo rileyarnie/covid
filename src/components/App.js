@@ -5,7 +5,7 @@ import Picker from "../containers/picker/Picker";
 import { connect } from "react-redux";
 import * as actionTypes from "../store/actions/actionTypes";
 import Cards from "../containers/cards/Cards";
-import { BoxLoading, RotateCircleLoading } from "react-loadingg";
+import { RotateCircleLoading } from "react-loadingg";
 
 class App extends Component {
   state = {
