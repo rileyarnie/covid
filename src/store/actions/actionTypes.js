@@ -3,8 +3,13 @@ import axios from "axios";
 
 const BASE_URL = "https://covid19.mathdro.id/api/";
 
-export const gettingData = () => (dispatch) => {
-  let url = BASE_URL;
+export const gettingData = (country) => (dispatch) => {
+  let url;
+  if (country) {
+    url = `${BASE_URL}countries/${country} `;
+  } else {
+    url = BASE_URL;
+  }
 
   axios
     .get(url)
@@ -48,9 +53,9 @@ export const gettingCountries = () => (dispatch) => {
     });
 };
 
-export const getCountries=(data)=>{
-    return{
-        type: actionTypes.GET_COUNRTIES,
-        payload:data.countries
-    }
-}
+export const getCountries = (data) => {
+  return {
+    type: actionTypes.GET_COUNRTIES,
+    payload: data.countries,
+  };
+};
