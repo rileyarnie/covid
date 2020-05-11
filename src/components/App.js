@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import * as actionTypes from "../store/actions/actionTypes";
 import Cards from "../containers/cards/Cards";
 import { RotateCircleLoading } from "react-loadingg";
+import { Container } from "@material-ui/core";
 
 class App extends Component {
   state = {
@@ -27,24 +28,26 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {this.props.data &&
-        this.props.dailyData &&
-        this.props.countries.length !== 0 ? (
-          <>
-            <Cards globalData={this.props.data} />
-            <Picker
-              handleCountry={this.handleCountry}
-              countries={this.props.countries}
-            />
-            <Graph
-              country={this.state.country}
-              globalData={this.props.data}
-              dailyData={this.props.dailyData}
-            />
-          </>
-        ) : (
-          <RotateCircleLoading />
-        )}
+        <Container>
+          {this.props.data &&
+          this.props.dailyData &&
+          this.props.countries.length !== 0 ? (
+            <>
+              <Cards globalData={this.props.data} />
+              <Picker
+                handleCountry={this.handleCountry}
+                countries={this.props.countries}
+              />
+              <Graph
+                country={this.state.country}
+                globalData={this.props.data}
+                dailyData={this.props.dailyData}
+              />
+            </>
+          ) : (
+            <RotateCircleLoading />
+          )}
+        </Container>
       </div>
     );
   }

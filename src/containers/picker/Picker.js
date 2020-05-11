@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import classes from "./Picker.module.css";
+import Container from "@material-ui/core/Container"
 
 export class Picker extends Component {
   handleChange = (event) => {
@@ -8,6 +9,8 @@ export class Picker extends Component {
 
   render() {
     return (
+      <Container>
+
       <div className={classes.formControl}>
         <label htmlFor="cars">Select Country: </label>
 
@@ -20,6 +23,7 @@ export class Picker extends Component {
           ))}
         </select>
       </div>
+      </Container>
     );
   }
 }

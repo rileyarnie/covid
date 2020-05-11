@@ -14,7 +14,7 @@ class Cards extends Component {
           justify="space-evenly"
           alignItems="baseline"
         >
-          <Card
+          <Card item 
             //   style={{ borderLeft: "solid 5px  rgba(22, 22, 196, 0.671)"}}
             className={cx(styles.infected)}
           >

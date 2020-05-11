@@ -16,3 +16,21 @@
     margin: 1.5%;
     border-left: solid 6px  rgba(240, 12, 12, 0.747);
 }
+
+@media only screen and (min-width: 768px) {
+    
+    .infected {
+        margin: 1.5%;
+        border-left: solid 6px  rgba(22, 22, 196, 0.671);
+    }
+    
+    .recovered {
+        margin: 1.5%;
+        border-left: solid 6px  rgba(75, 236, 11, 0.671);
+    }
+    
+    .deaths {
+        margin: 1.5%;
+        border-left: solid 6px  rgba(240, 12, 12, 0.747);
+    }
+    }
