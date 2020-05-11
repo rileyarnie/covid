@@ -1,5 +1,17 @@
-@media only screen and (max-width: 678px) {
+@media only screen and (max-width: 768px) {
   .container {
     height: 100vh;
+    width: 100%;
   }
+
+}
+
+.container {
+  height: 100vh;
+  width: 80;
+}
+
+.pieChart {
+  height: 50vh;
+  
 }
