@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import * as actionTypes from "../store/actions/actionTypes";
 import Cards from "../containers/cards/Cards";
 import { RotateCircleLoading } from "react-loadingg";
-import { Container } from "@material-ui/core";
 
 class App extends Component {
   state = {
@@ -49,7 +48,6 @@ class App extends Component {
           <RotateCircleLoading />
         )}
         </div>
-        {/* <Container></Container> */}
       </div>
     );
   }

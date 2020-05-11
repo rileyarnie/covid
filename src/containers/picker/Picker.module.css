@@ -1,8 +1,22 @@
 .formControl {
-  /* text-align-last: center; */
   max-width: 120px;
   margin-top: 4px;
   margin-bottom: 10px;
-  margin-left: 2%;
+  margin-left: 10%;
+
   
 }
+
+@media only screen and (min-width: 768px) {
+  .formControl {
+    /* text-align-last: center; */
+    max-width: 120px;
+    margin-top: 4px;
+    margin-left: 35%;    /* margin-right: 10%; */
+  
+    
+  }
+
+}
+
+
