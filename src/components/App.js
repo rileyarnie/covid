@@ -26,28 +26,30 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App ">
         <Header />
-        <Container>
-          {this.props.data &&
-          this.props.dailyData &&
-          this.props.countries.length !== 0 ? (
-            <>
-              <Cards globalData={this.props.data} />
-              <Picker
-                handleCountry={this.handleCountry}
-                countries={this.props.countries}
-              />
-              <Graph
-                country={this.state.country}
-                globalData={this.props.data}
-                dailyData={this.props.dailyData}
-              />
-            </>
-          ) : (
-            <RotateCircleLoading />
-          )}
-        </Container>
+        <div className="container ">
+
+        {this.props.data &&
+        this.props.dailyData &&
+        this.props.countries.length !== 0 ? (
+          <>
+            <Cards globalData={this.props.data} />
+            <Picker
+              handleCountry={this.handleCountry}
+              countries={this.props.countries}
+            />
+            <Graph
+              country={this.state.country}
+              globalData={this.props.data}
+              dailyData={this.props.dailyData}
+            />
+          </>
+        ) : (
+          <RotateCircleLoading />
+        )}
+        </div>
+        {/* <Container></Container> */}
       </div>
     );
   }
